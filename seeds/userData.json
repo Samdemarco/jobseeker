@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Jane",
+    "id": 133245,
+    "email": "jane@hotmail.com",
+    "password": "apple329",
+    "resume_URL": "https://www.sometext1.com",
+    "applied_Jobs": "Full-stack Developer"
+  },
+  {
+    "name": "Frenchie",
+    "id": 654820,
+    "email": "frenchie@gmail.com",
+    "password": "stringcheese323",
+    "resume_URL": "https://www.sometext2.com",
+    "applied_Jobs": "Full-stack Developer"
+  },
+  {
+    "name": "Dennise",
+    "id": 945728,
+    "email": "denise37@gmail.com",
+    "password": "redgreen32",
+    "resume_URL": "https://www.sometext3.com",
+    "applied_Jobs": "Full-stack Developer"
+  },
+  {
+    "name": "Kyrie",
+    "id": 937183,
+    "email": "kyrie@gmail.com",
+    "password": "preheatexpress7",
+    "resume_URL": "https://www.sometext4.com",
+    "applied_Jobs": "Full-stack Developer"
+  },
+  {
+    "name": "Genevive",
+    "id": 875205,
+    "email": "genevive@gmail.com",
+    "password": "housely323",
+    "resume_URL": "https://www.sometext5.com",
+    "applied_Jobs": "Full-stack Developer"
+  }
+]
