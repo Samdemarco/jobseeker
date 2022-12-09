@@ -15,7 +15,7 @@ const seedDatabase = async () => {
     returning: true,
   });
 
-  await Jobs.bulkCreate(jobData);
+  await Job.bulkCreate(jobData);
 
   process.exit(0);
 };
