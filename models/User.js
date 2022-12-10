@@ -24,10 +24,9 @@ User.init(
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [10],
+        len: [8],
       },
-    },
-    
+    },    
     email: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -38,7 +37,7 @@ User.init(
     },
     resume_URL: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
       unique: true,
       validate: {
         isResume: true,
@@ -46,7 +45,7 @@ User.init(
     },
     applied_Jobs: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
       unique: false,
       validate: {
         isAppliedJobs: true,

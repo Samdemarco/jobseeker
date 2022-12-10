@@ -29,6 +29,8 @@ const loginFormHandler = async (event) => {
     const email = document.querySelector('#email-signup').value.trim();
     const password = document.querySelector('#password-signup').value.trim();
   
+    console.log (`name & email & passwd: ${name} + ${email} + ${password}`);
+
     if (name && email && password) {
       const response = await fetch('/api/users', {
         method: 'POST',
@@ -39,7 +41,7 @@ const loginFormHandler = async (event) => {
       if (response.ok) {
         document.location.replace('/profile');
       } else {
-        alert(response.statusText);
+        alert("Account creation failed!" + response.statusText);
       }
     }
   };
