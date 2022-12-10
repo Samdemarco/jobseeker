@@ -31,12 +31,16 @@
             <li class="nav-item">
               <a class="nav-link" href="/job_board">Jobs</a>
             </li>
+            <!-- Conditionally render login or logout links -->
+            {{#if logged_in}}
             <li class="nav-item">
-              <a class="nav-link" href="profile.handlebars">Profile</a>
+              <a class="nav-link" href="/profile">Profile</a>
             </li>
+            {{else}}
             <li class="nav-item">
-              <a class="nav-link" href="login.handlebars">Login</a>
+              <a class="nav-link" href="/login">Login</a>
             </li>
+            {{/if}}
           </ul>
         </div>
       </div>
