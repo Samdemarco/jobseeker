@@ -27,6 +27,14 @@ Job.init(
       type: DataTypes.STRING,
       allowNull: false,
     }, 
+    job_id: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    }, 
+    post_date: {
+      type: DataTypes.DATE,
+      allowNull: false,
+    },
   },
   {   
     sequelize,

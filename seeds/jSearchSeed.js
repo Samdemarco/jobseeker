@@ -27,7 +27,7 @@ const options = {
         console.log("In the file");
 
     for (var i=0; i<10;i++) {         // i<json.data.length;i++){
-       const temp = {job_title: json.data[i].job_title, description: json.data[i].job_description, job_city: json.data[i].job_city, employer: json.data[i].employer_name};
+       const temp = {post_date: json.data[i].job_posted_at_datetime_utc, job_id: json.data[i].job_id, job_title: json.data[i].job_title, description: json.data[i].job_description, job_city: json.data[i].job_city, employer: json.data[i].employer_name};
         
       tempJobs.push(temp);  
     //   console.log(tempJobs);
