@@ -44,7 +44,7 @@ User.init(
       },
     },
     applied_Jobs: {
-      type: DataTypes.STRING,
+      type: DataTypes.ARRAY(DataTypes.STRING),
       allowNull: true,
       unique: false,
       validate: {
