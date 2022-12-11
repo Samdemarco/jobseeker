@@ -16,7 +16,8 @@ div {
     <div id="collapseOne_{{@index}}" class="accordion-collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample" style="">
       <div class="accordion-body">
         <strong>Location: </strong> {{job.job_city}}<br>
-        <strong>Employer: </strong> {{job.employer}}
+        <strong>Employer: </strong> {{job.employer}}<br>
+        <strong>Date Posted:</strong> {{format_date job.post_date}}
       </div>
     </div>
   </div>
