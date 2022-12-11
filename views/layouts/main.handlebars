@@ -13,8 +13,8 @@
 </head>
 
 <body>
-  <header class="display-flex justify-space-between align-center p-2">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <!--header class="display-flex justify-space-between align-center p-2"-->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
       <div class="container-fluid">
         <a class="navbar-brand">JobSeeker</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02"
@@ -35,6 +35,7 @@
             {{#if logged_in}}
             <li class="nav-item">
               <a class="nav-link" href="/profile">Profile</a>
+              <button class="no-button" id="logout">logout</button>
             </li>
             {{else}}
             <li class="nav-item">
@@ -45,13 +46,14 @@
         </div>
       </div>
     </nav>
-  </header>
+  <!--/header-->
   <main class="container container-fluid mt-5">
     {{{ body }}}
   </main>
-  <footer>
-
-  </footer>
+  <!-- Render script for logged in users only -->
+  {{#if logged_in}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
 </body>
 
 </html>
