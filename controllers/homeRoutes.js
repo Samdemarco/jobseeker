@@ -11,14 +11,14 @@ router.get('/', async (req, res) => {
   }
 });
 
-// Render login page
+/*Render login page
+If the user is already logged in, redirect the request to another route*/
 router.get('/login', (req, res) => {
-  // If the user is already logged in, redirect the request to another route
-/*  if (req.session.logged_in) {
+if (req.session.logged_in) {
     res.redirect('/profile');
     return;
   }
-*/
+
   res.render('login');
 });
 
