@@ -16,7 +16,6 @@ app.use(cors());
 
 // Set up Handlebars.js engine with custom helpers
 const hbs = exphbs.create({ helpers });
-// const hbs = exphbs.create();
 
 const sess = {
   secret: 'Super secret secret',
