@@ -28,7 +28,7 @@ router.get('/profile', withAuth, async (req, res) => {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
-      include: [{ model: Project }],
+      // include: [{ model: Project }],
     });
 
     const user = userData.get({ plain: true });
@@ -40,6 +40,16 @@ router.get('/profile', withAuth, async (req, res) => {
   } catch (err) {
     res.status(500).json(err);
   }
+});
+
+// Update user's profile
+router.put('/pofile', (req, res) => {
+  console.log(`\\x1b[1;36mreq.session.user_id: ${req.session.user_id}\\x1b[0m`);
+  User.update(req.body, {
+    where: {
+      id: req.params.id,
+    },
+  })
 });
 
 module.exports = router;
