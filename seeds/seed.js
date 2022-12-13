@@ -7,8 +7,8 @@ const jobData = require('./jobData.json');
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
-  console.log("userData: " + userData);  
-  console.log("jobData: " + jobData);  
+  //console.log("userData: " + userData);  
+  //console.log("jobData: " + jobData);  
 
   await User.bulkCreate(userData, {
     individualHooks: true,

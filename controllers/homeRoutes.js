@@ -14,7 +14,7 @@ router.get('/', async (req, res) => {
 /*Render login page
 If the user is already logged in, redirect the request to another route*/
 router.get('/login', (req, res) => {
-if (req.session.logged_in) {
+  if (req.session.logged_in) {
     res.redirect('/profile');
     return;
   }
@@ -28,7 +28,6 @@ router.get('/profile', withAuth, async (req, res) => {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
-      // include: [{ model: Project }],
     });
 
     const user = userData.get({ plain: true });
@@ -43,13 +42,41 @@ router.get('/profile', withAuth, async (req, res) => {
 });
 
 // Update user's profile
-router.put('/pofile', (req, res) => {
-  console.log(`\\x1b[1;36mreq.session.user_id: ${req.session.user_id}\\x1b[0m`);
-  User.update(req.body, {
-    where: {
-      id: req.params.id,
-    },
-  })
+router.put('/profile', async (req, res) => {
+  try {
+    // Find the user's profile information based on the session ID
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ['password'] },
+    });
+
+    // Retrieve current profile values
+    const user = userData.get({ plain: true });
+    /*    const currentName = user.name;
+        const currentEmail = user.email;
+        const currentResume = user.resume_url;*/
+    User.update(req.body, {
+      where: {
+        id: req.session.user_id,
+      },
+    });
+    res.render('profile', {
+      ...user,
+      logged_in: true
+    });
+  } catch (err) {
+    // Current user couldn't be retrieved from the database
+    res.status(500).json(err);
+  }
+
+  console.log(`\nreq.body: ${req.body.name}\t${req.body.email}\t${req.body.resume_url}\t\n`);
+  /*  let profileUpdatedInfo;
+    // Verify which profile values change before updating
+    if (currentName != req.body.name) {
+      profileUpdatedInfo = {"name": req.body.name};
+    } else if (currentEmail != req.body.email) {
+  
+    }
+  */
 });
 
 module.exports = router;
