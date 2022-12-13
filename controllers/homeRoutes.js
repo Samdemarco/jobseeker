@@ -5,6 +5,14 @@ const withAuth = require('../utils/auth');
 // Render homepage
 router.get('/', async (req, res) => {
   try {
+    // If the user is logged in set logged_in to show corresponding nav menu
+    if (req.session.logged_in) {
+      res.render('homepage', {
+        logged_in: true
+      });
+      return;
+    }
+    // Without logged_in display nav menu with 'login' link
     res.render('homepage');
   } catch (err) {
     res.status(500).json(err);
