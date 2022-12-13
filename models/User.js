@@ -7,7 +7,7 @@ class User extends Model {
     return bcrypt.compareSync(loginPassword, this.password);
   }
 }
-
+//Certain unique fields were set to false for demo purposes (resume_URL as an example). In actual deployment you would expect these fields to be unique
 User.init(
   {
     id: {
@@ -38,13 +38,13 @@ User.init(
     resume_URL: {
       type: DataTypes.STRING,
       allowNull: true,
-      unique: true,
+      unique: false, 
       validate: {
         isUrl: true,
       },
     },
     applied_Jobs: {
-      type: DataTypes.ARRAY(DataTypes.STRING),
+      type: DataTypes.STRING,
       allowNull: true,
       unique: false,
       validate: {
