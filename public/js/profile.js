@@ -3,15 +3,15 @@ const updateProfile = async (event) => {
 
   const name = document.querySelector('#name-profile').value.trim();
   const email = document.querySelector('#email-profile').value.trim();
-  const resume_url = document.querySelector('#resume-profile').value.trim();
+  const resume_URL = document.querySelector('#resume-profile').value.trim();
 
-  console.log(`name: ${name} email: ${email} resume_url: ${resume_url}`);
+  console.log(`name: ${name} email: ${email} resume_url: ${resume_URL}`);
 
   // Update user's profile if any of their information has changed
-  if (name || email || resume_url) {
+  if (name || email || resume_URL) {
     const response = await fetch(`/profile`, {
       method: 'PUT',
-      body: JSON.stringify({ name, email, resume_url }),
+      body: JSON.stringify({ name, email, resume_URL }),
       headers: {
         'Content-Type': 'application/json',
       },
