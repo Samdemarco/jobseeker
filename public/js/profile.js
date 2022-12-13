@@ -3,13 +3,15 @@ const updateProfile = async (event) => {
 
   const name = document.querySelector('#name-profile').value.trim();
   const email = document.querySelector('#email-profile').value.trim();
-  const resume = document.querySelector('#resume-profile').value.trim();
+  const resume_url = document.querySelector('#resume-profile').value.trim();
+
+  console.log(`name: ${name} email: ${email} resume_url: ${resume_url}`);
 
   // Update user's profile if any of their information has changed
-  if (name || email || resume) {
-    const response = await fetch(`/api/projects`, {
-      method: 'POST',
-      body: JSON.stringify({ name, email, resume }),
+  if (name || email || resume_url) {
+    const response = await fetch(`/profile`, {
+      method: 'PUT',
+      body: JSON.stringify({ name, email, resume_url }),
       headers: {
         'Content-Type': 'application/json',
       },
@@ -18,11 +20,12 @@ const updateProfile = async (event) => {
     if (response.ok) {
       document.location.replace('/profile');
     } else {
-      alert('Failed to create project');
+      alert('Failed to update profile information');
+      return;
     }
   }
 };
-
+/*
 const delButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
@@ -38,11 +41,12 @@ const delButtonHandler = async (event) => {
     }
   }
 };
-
+*/
 document
-  .querySelector('.new-project-form')
+  .querySelector('.profile-form')
   .addEventListener('submit', updateProfile);
-
+/*
 document
   .querySelector('.project-list')
   .addEventListener('click', delButtonHandler);
+*/

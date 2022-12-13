@@ -26,7 +26,7 @@ User.init(
       validate: {
         len: [8],
       },
-    },    
+    },
     email: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -40,7 +40,7 @@ User.init(
       allowNull: true,
       unique: true,
       validate: {
-        isResume: true,
+        isUrl: true,
       },
     },
     applied_Jobs: {

@@ -1,17 +1,17 @@
 <section class="container">
     <h1> Lets Get Started! Create Your Profile:</h1>
     <div class="container" style="border: 2px solid white;">
-        <form>
+        <form class="form profile-form">
             <fieldset>
                 <legend style="font-weight: 500;"> Profile Details:</legend>
                 <div class="form-group">
                     <label for="exampleTextarea" class="form-label mt-4">Name:</label>
-                    <textarea class="form-control" id="name-profile" rows="1"></textarea>
+                    <textarea class="form-control" id="name-profile" rows="1" placeholder="{{name}}"></textarea>
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1" class="form-label mt-4">Email address:</label>
                     <input type="email" class="form-control" id="email-profile" aria-describedby="emailHelp"
-                        placeholder="Enter email">
+                        placeholder="{{email}}">
                     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
                         else.</small>
                 </div>
@@ -22,7 +22,7 @@
                 </div-->
                 <div class="form-group">
                     <label for="formFile" class="form-label mt-4">Resume URL:</label>
-                    <input class="form-control" type="url" id="resume-profile">
+                    <input class="form-control" type="url" id="resume-profile" placeholder="{{resume_url}}">
                 </div>
                 <div class="form-group">
                     <button class="btn btn-primary" type="submit">Update</button>
@@ -30,6 +30,5 @@
             </fieldset>
         </form>
     </div>
-</section>
-
 <script src="./js/profile.js"></script>
+</section>
