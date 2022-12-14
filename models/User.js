@@ -47,9 +47,9 @@ User.init(
       type: DataTypes.STRING,
       allowNull: true,
       unique: false,
-      validate: {
-        isAppliedJobs: true,
-      },
+//       validate: {
+//         isAppliedJobs: true,
+//       },
     },
   },
   {
