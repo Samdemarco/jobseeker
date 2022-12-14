@@ -73,4 +73,29 @@ router.post('/logout', (req, res) => {
   }
 });
 
+router.put('/application', async (req, res) => {
+  try {
+    // Find the user's profile information based on the session ID
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ['password'] },
+    });
+console.log("userData is: "+ userData);
+    User.update(
+      {
+        applied_Jobs: req.body.job_id,
+      },
+      {
+        where: {
+          id: req.session.user_id,        
+        },
+    });
+   
+  } catch (err) {
+    // Current user couldn't be retrieved from the database
+    res.status(500).json(err);
+  }
+
+ 
+});
+
 module.exports = router;
