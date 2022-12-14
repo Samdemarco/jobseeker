@@ -98,4 +98,27 @@ console.log("userData is: "+ userData);
  
 });
 
+// Delete a user
+router.delete('/delete', async (req, res) => {
+  try {
+    const userData = await User.destroy({
+      where: {
+        id: req.session.user_id,
+      },
+    });
+    req.session.destroy(() => {
+      res.status(204).end();
+    });
+  
+    if (!userData) {
+      res.status(404).json({ message: 'No User found with this id!' });
+      return;
+    }
+
+    res.status(200).json(userData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 module.exports = router;
