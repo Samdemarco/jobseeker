@@ -1,3 +1,6 @@
+
+
+
 const updateProfile = async (event) => {
   event.preventDefault();
 
@@ -25,28 +28,51 @@ const updateProfile = async (event) => {
     }
   }
 };
-/*
-const delButtonHandler = async (event) => {
-  if (event.target.hasAttribute('data-id')) {
-    const id = event.target.getAttribute('data-id');
 
-    const response = await fetch(`/api/projects/${id}`, {
-      method: 'DELETE',
+const delButtonHandler = async (event) => {
+  event.preventDefault();
+
+
+
+
+  if (window.confirm("Are you sure you want to delete your profile!?") == true) {
+
+    console.log("Profile IS being deleted!");
+
+
+    const response = await fetch(`/api/users/delete`, {
+    method: 'DELETE',
     });
 
     if (response.ok) {
-      document.location.replace('/profile');
+      document.location.replace('/');
     } else {
-      alert('Failed to delete project');
-    }
-  }
+      alert('Failed to delete user');
+    }  
 };
-*/
+
+    console.log("Profile was NOT deleted!");
+
+}
+
+// const delButtonHandler = async (event) => {
+//   event.preventDefault(); 
+
+
+//   if (window.confirm("Are you sure you want to delete your profile!?") == true) {
+//     console.log("Delete button was clicked!");
+//   } else {
+//     console.log("Cancelled!");
+//   }
+  
+  
+// };
+
+
 document
   .querySelector('.profile-form')
   .addEventListener('submit', updateProfile);
-/*
+
 document
-  .querySelector('.project-list')
+  .getElementById('delete_btn')
   .addEventListener('click', delButtonHandler);
-*/
