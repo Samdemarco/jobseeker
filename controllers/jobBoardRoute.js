@@ -1,8 +1,9 @@
 const router = require('express').Router();
 const { Job } = require('../models');
+const withAuth = require('../utils/auth');
 
 // Get all jobs in the database
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
   try {
     // Get all jobs, sorted by title
     const jobData = await Job.findAll({
@@ -14,9 +15,10 @@ router.get('/', async (req, res) => {
     const jobs = jobData.map((project) => project.get({ plain: true }));
 
     // Pass serialized data into Handlebars.js template
-    res.render('job_board', {jobs} );
-    //console.log(jobs); 
-
+    res.render('job_board', {
+      jobs,
+      logged_in: true
+    });
   } catch (err) {
     res.status(500).json(err);
   }
