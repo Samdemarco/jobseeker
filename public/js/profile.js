@@ -21,7 +21,7 @@ const updateProfile = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/profile');
+      document.location.replace('/job_board');
     } else {
       alert('Failed to update profile information');
       return;
