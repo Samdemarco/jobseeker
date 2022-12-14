@@ -17,7 +17,7 @@ const loginFormHandler = async (event) => {
       // If successful, redirect the browser to the profile page
       document.location.replace('/job_board');
     } else {
-      alert(response.statusText);
+      alert("Please try entering your credentials again, or Register with us!");
     }
   }
 };
