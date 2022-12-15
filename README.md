@@ -34,7 +34,7 @@ To run your own version of the app do the following:
 To start the app type: `node server.js`
 
 Click on the image below to watch a video of the JobSeeker site in action
-[![Video of the JobSeeker in action](https://github.com/mbenitez1607/jobseeker/blob/main/public/assets/JobSeeker.png)(https://drive.google.com/file/d/1AjDFP5xnjXENPVc_oMNYDTSnb3Ox2XgO/view?usp=share_link)
+[![Video of the JobSeeker in action(https://github.com/mbenitez1607/jobseeker/blob/main/public/assets/JobSeeker.png)](https://drive.google.com/file/d/1AjDFP5xnjXENPVc_oMNYDTSnb3Ox2XgO/view?usp=share_link)
 
 ## Credits
 
