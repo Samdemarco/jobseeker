@@ -20,7 +20,7 @@ The application uses: `Node.js`, `MySQL2`, `Express.js`, `Sequelize`, and `Handl
 
 ## Installation
 
-The application is deployed at: [JobSeeker](https://jobseeker20221214.herokuapp.com/)
+The application is deployed at: [JobSeeker](https://jobseeker-proj2.herokuapp.com/job_board)
 
 To run your own version of the app do the following:
 1. Clone this git repo to your computer
